@@ -1,0 +1,80 @@
+------------------------Q1------------------------------------
+# 1. Create cdac1 and cdac2 directories
+mkdir cdac1 cdac2
+
+# 2. Copy cdac2 inside cdac1 directory
+cp -r cdac2 cdac1/
+
+# 3. Change the permission of cdac2 to only have user read and execute permission
+chmod 500 cdac1/cdac2
+
+# 4. Find the number of characters in /etc/passwd file
+wc -c /etc/passwd
+
+#5. delete cdac2 directory
+rm -r cdac1/cdac2
+
+
+------------------------------Q2-----------------------------
+#!/bin/bash
+
+s:"lse 
+"
+read -p "Enter the file name to search for: " file_name
+
+# Search for the file in the system
+found=$(find / -type f -name "$file_name" 2>/dev/null)
+
+# Check if the file was found
+if [ -n "$found" ]; then
+    echo "File '$file_name' found at the following locations:"
+    echo "$found"
+else
+    echo "File '$file_name' does not exist anywhere on the system."
+fi
+
+-----------------------------Q3---------------------------------------
+
+import java.util.Random;
+
+public class RandomNumbers {
+    public static void main(String[] args) {
+        Random random = new Random();
+        
+    
+        for (int i = 0; i < 5; i++) {
+            int randomNumber = 1000 + random.nextInt(9000);
+            System.out.println(randomNumber);
+        }
+    }
+}
+
+------------------------------------Q4-------------------------------------
+ 
+dependency pom.xml m dal dena
+or comments hata lena
+
+    WebDriver driver = new ChromeDriver();
+        
+        try {
+            // Open the target URL
+            driver.get("https://testpages.eviltester.com/styled/javascript-countdown-test.html");
+
+            // Find the input field for seconds and enter a value
+            WebElement secondsInput = driver.findElement(By.id("timer-seconds"));
+            secondsInput.clear();  // Clear any default value
+            secondsInput.sendKeys("10"); // Enter "10" seconds (or any value you want)
+
+            // Find the Reset Timer button and click it
+            WebElement resetButton = driver.findElement(By.id("reset-timer"));
+            resetButton.click();
+
+            // Optional: Wait for a few seconds to let the countdown start
+            Thread.sleep(5000); // Wait for 5 seconds for demonstration (adjust timing as needed)
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            // Close the browser
+            driver.quit();
+        }
